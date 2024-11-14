@@ -1,0 +1,88 @@
+<%- include("partials/header.ejs") %>
+
+<header>
+    <h1>Blogger<span style="color: #D66C03;">Up<span></h1>
+</header>
+
+<main>
+
+    <div id="Left-Main">
+
+        <form action="/" method="post">
+            <div>
+            <h2>CREATE POST</h2>
+        </div>
+            <div class="form-field">
+            <label for="fTitle">Title</label>
+            <input type="text" id="fTitle" name="fTitle" required>
+        </div>
+            <div class="form-field">
+            <label for="fContent"> Message</label>
+            <textarea type="text" id="fContent" name="fMessage" ></textarea>
+        </div>
+            <input type="submit" value="Submit">
+
+        </form>
+
+
+    </div>
+
+    <div id="Right-Main">   
+        
+        <% if (locals.post)  {%>
+            
+            <% post.forEach( (e, index) => { %>
+                
+
+                <div class="Post-Container">
+                    <div class="Header-Post">
+                        <h1> <%- e.Title %> </h1>
+                        <button class="Checkmark" style="border: transparent; background-color: transparent; padding-top: 5px;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
+                                <g clip-path="url(#clip0_59_2)">
+                                  <path d="M15 27.5C21.9036 27.5 27.5 21.9036 27.5 15C27.5 8.09644 21.9036 2.5 15 2.5C8.09644 2.5 2.5 8.09644 2.5 15C2.5 21.9036 8.09644 27.5 15 27.5Z" stroke="white" stroke-width="3.75"/>
+                                  <path d="M10.625 15.625L13.125 18.125L19.375 11.875" stroke="white" stroke-width="3.75" stroke-linecap="round" stroke-linejoin="round"/>
+                                </g>
+                                <defs>
+                                  <clipPath id="clip0_59_2">
+                                    <rect width="30" height="30" fill="white"/>
+                                  </clipPath>
+                                </defs>
+                              </svg>
+                        </button>
+
+                        <button class="Edit-Button" style="background-color: transparent; border: transparent; padding-top: 5px;" value= "<%- index %>">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
+                            <path d="M26.5999 8.00006L14.6749 19.925C13.4874 21.1125 9.96234 21.6625 9.17484 20.875C8.38734 20.0875 8.92484 16.5625 10.1123 15.375L22.0499 3.43753C22.3443 3.11635 22.7006 2.85818 23.0976 2.67855C23.4945 2.49893 23.9238 2.40155 24.3594 2.39238C24.7949 2.38321 25.2279 2.46239 25.632 2.62515C26.0361 2.78791 26.4031 3.03091 26.7108 3.33941C27.0184 3.64791 27.2604 4.01554 27.422 4.42011C27.5836 4.8247 27.6618 5.25783 27.6514 5.69339C27.641 6.12895 27.5424 6.55794 27.3618 6.95438C27.181 7.35081 26.9219 7.70655 26.5999 8.00006Z" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M13.75 5H7.5C6.17391 5 4.90222 5.52677 3.96454 6.46446C3.02686 7.40215 2.5 8.67391 2.5 10V22.5C2.5 23.8261 3.02686 25.0979 3.96454 26.0355C4.90222 26.9732 6.17391 27.5 7.5 27.5H21.25C24.0125 27.5 25 25.25 25 22.5V16.25" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                        
+                        <form action="/deleted" method="get">
+                            <button type="submit" name="fPosition" value="<%- index %>" style="color: transparent; background-color: transparent; height: fit-content; width: fit-content; border: transparent; padding-top:6px; box-sizing: border-box;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="35" height="36" viewBox="0 0 35 36" fill="none" id="<%- index %>">
+                                    <path d="M26.25 9.25L25.0821 26.7688C24.9798 28.3031 24.9286 29.0704 24.5973 29.6521C24.3055 30.1643 23.8654 30.5759 23.335 30.833C22.7325 31.125 21.9636 31.125 20.4257 31.125H14.5743C13.0365 31.125 12.2676 31.125 11.6651 30.833C11.1347 30.5759 10.6946 30.1643 10.4028 29.6521C10.0714 29.0704 10.0202 28.3031 9.91796 26.7688L8.75004 9.25M5.83337 9.25H29.1667M23.3334 9.25L22.9387 8.06594C22.5562 6.91849 22.3649 6.34477 22.0102 5.9206C21.697 5.54602 21.2948 5.25609 20.8404 5.07739C20.3257 4.875 19.7211 4.875 18.5115 4.875H16.4885C15.279 4.875 14.6744 4.875 14.1597 5.07739C13.7053 5.25609 13.3031 5.54602 12.9898 5.9206C12.6351 6.34477 12.4439 6.91849 12.0614 8.06594L11.6667 9.25M20.4167 15.0833V25.2917M14.5834 15.0833V25.2917" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                  </svg>
+                            </button>
+                        
+                        </form>
+                    </div>
+                        <pre name="Reply-Text" id="RText" readonly><%- e.Message %></pre>
+                        <form action="/text-edit" method="post">
+                        <textarea type="text" id="fContentEdit" name="fMessageEdit" class="Edit-Text"><%- e.Message %></textarea>
+                        <button class="Change-Submit" type="submit" name="fMessageEditIndex" value="<%- index %>">Submit</button>
+                    </form>
+                </div>
+
+
+            <% }) %>  
+
+            <% } %>
+    </div>
+
+</main>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="/index.js" charset="UTF-8"></script>
+</body>
+</html>

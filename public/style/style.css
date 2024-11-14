@@ -1,0 +1,298 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    font-size: 10px;
+    font-family: "Inter", sans-serif;
+}
+
+header {
+    width: 100%;
+    height: 118px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background: #FBFBFB;
+}
+
+header h1 {
+    font-size: 4.8rem;
+    font-weight: 900;
+    color: #353F71;
+}
+
+main {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    display: flex;
+    gap: 0px;
+}
+
+#Left-Main {
+    width: 50%;
+    height:100% ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form[action="/"] {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 520px;
+    height: 600px;
+    box-sizing: border-box;
+    border-radius: 75px;
+    background: #FBFBFB;
+    box-shadow: 0px 0px 17.9px -1px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+    gap: 20px;
+}
+
+form[action="/"] div:nth-child(1) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 520px;
+    height: 100px;
+    background: #D66C03;
+    
+  
+}
+
+form div h2 {
+    font-size: 3.6rem;
+color: white;
+font-family: "Inter", sans-serif;
+font-weight: 800;
+letter-spacing: -0.5px;
+}
+
+
+.form-field {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 500px;
+    height: fit-content;
+    gap: 10px;
+    box-sizing: border-box;
+}
+
+.form-field label {
+    font-size: 2.4rem;
+    font-weight: 800;
+    color: #D66C03;
+    
+}
+
+input[type="text"] {
+    width: 100%;
+    text-align: left;
+    vertical-align: top;
+    height: 51px;
+    padding-left: 10px;
+    border-radius: 5px;
+    border: 2px solid rgba(1, 1, 1, 0.40);
+    box-shadow: 0px 0px 2px -12px rgba(0, 0, 0, 0.30);
+    box-sizing: border-box;
+    color:#D66C03;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+textarea[name="fMessage"] {
+    width: 100%;
+    text-align: left;
+    vertical-align: top;
+    padding-left: 10px;
+    height: 200px;
+    border-radius: 5px;
+    border: 2px solid rgba(1, 1, 1, 0.40);
+    box-shadow: 0px 0px 2px -12px rgba(0, 0, 0, 0.30);
+    box-sizing: border-box;
+    resize: none;
+    color:#D66C03;
+    font-family: "Inter", sans-serif;
+    font-weight: 700;
+}
+
+#fContent {
+    height: 200px;
+}
+input[value="Submit"] {
+    background-color: #D66C03;
+    width: 227px;
+    height: 70px;
+    color: #FFF;
+    text-align: center;
+    font-family: Inter;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    letter-spacing: -0.3px;
+    color: white;
+    border-radius: 12px;
+    border: none;
+    background: #D66C03;
+
+    
+}
+
+input[value="Submit"]:hover {
+    background-color: #d36900;
+}
+/* 
+font-size: 3.6rem;
+color: white;
+font-family: "Inter", sans-serif;
+font-weight: 400; */
+
+
+
+#Right-Main {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height:100% ;
+    gap: 20px;
+    box-sizing: border-box;
+    padding: 10px;
+    overflow-y: scroll;
+
+}
+
+#Right-Main::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, and Opera */
+}
+
+.Post-Container {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: stretch; /* Stretch children to full width */
+    width: 100%;
+    height: fit-content;
+    flex-grow: 0;
+    gap: 20px;
+    padding-bottom: 10px;
+    border-radius: 20px;
+    background: #FBFBFB;
+    box-shadow: 0px 0px 17.9px -1px rgba(0, 0, 0, 0.25);
+    box-sizing: border-box;
+
+}
+
+.Header-Post {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 23px 20px 23px;
+    background-color: #353F71;
+    height: fit-content;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    text-align: left;
+    gap: 10px;
+}
+
+
+.Header-Post h1 {
+    color: #FFF;
+    font-family: Inter;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+    letter-spacing: -1.44px;
+    text-transform: capitalize;
+    text-align: left;
+    flex: 1;
+    word-break: break-word;
+    padding: 0;
+    margin: 0;
+}
+
+.Checkmark {
+    display: none;
+}
+
+pre[name="Reply-Text"] {
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+    text-align: left;
+    padding-left: 10px;
+    padding-right: 10px;
+    resize: none;
+    border: none;
+    word-break: break-word;
+    outline: none;          /* Remove focus outline (optional) */
+    color: #353F71;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -0.64px;
+    text-transform: capitalize;
+    background-color: transparent;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    margin: 0;
+    white-space: pre-wrap;
+    
+}
+
+textarea[name="fMessageEdit"] {
+    display: none;
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+    text-align: left;
+    padding-left: 10px;
+    padding-right: 10px;
+    resize: none;
+    border: none;
+    word-break: break-word;
+    outline: none;          /* Remove focus outline (optional) */
+    color: #353F71;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -0.64px;
+    text-transform: capitalize;
+    background-color: transparent;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    margin: 0;
+}
+
+.Change-Submit {
+    position: absolute;
+    right: 12px;
+    bottom: 15px;
+    background-color: #353F71;
+    border:transparent;
+    padding: 7px 12px;
+    font-family: Inter;
+    color: white;
+    font-weight: 800;
+    line-height: normal;
+    letter-spacing: -0.3px;
+    border-radius: 12px;
+    border: none;
+    display: none;
+
+}
+
+
+/* textarea[name="Reply-Text"]::-webkit-scrollbar {
+    display: none;
+} */
